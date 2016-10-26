@@ -1,0 +1,42 @@
+body {
+	background-color: #2C404D;
+
+}
+#main {
+	border-radius: 3px;
+	position: fixed;
+	top: 0;
+	left: 60px;
+	right: 60px;
+	bottom: 30px;
+	background: white;
+}
+
+.square {
+	/*background-image: url('assets/img/gear.png');*/
+	float:left;
+    position: relative;
+    width: 15%;
+    padding-bottom : 15%; /* = width for a 1:1 aspect ratio */
+    margin:1.66%;
+    background-color:#1E1E1E;
+    overflow:hidden;
+}
+.content {
+    position:absolute;
+    height:90%; /* = 100% - 2*5% padding */
+    width:90%; /* = 100% - 2*5% padding */
+    padding: 5%;
+    
+}
+
+.bg{
+	background-image: url('assets/img/gear.png');
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover; /* you change this to "contain" if you don't want the images to be cropped */
+    color:#fff;
+}
+.img3{
+    background-image: url('assets/img/gear.png');
+}
