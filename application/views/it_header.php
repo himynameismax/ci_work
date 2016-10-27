@@ -22,17 +22,40 @@
 <body>
 
     <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
-      <a class="navbar-brand" href="/it">Project name</a>
+      <a class="navbar-brand" href="/it"><img src="../assets/img/corp_logo.png" width="40%"></a>
       <ul class="nav navbar-nav">
         <li class="nav-item active">
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="it/tech_work">TW</a>
+          <a class="nav-link" href="/it/tech_work">TW</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="it/comp">PC</a>
+          <a class="nav-link" href="/it/computers">PC</a>
         </li>
+        <li class="dropdown">
+          <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Info
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/it/depts">Depts</a></li>
+            <li class="divider"></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Equip
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/it/cart">Cart</a></li>
+            <li><a href="/it/printers">Printers</a></li>
+            <li class="divider"></li>
+          </ul>
+        </li>
+
+        
       </ul>
     </nav>
 

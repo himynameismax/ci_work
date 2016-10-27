@@ -27,11 +27,27 @@ class It extends CI_Controller {
 
 		$output = $crud->render();
 
-		$this->it_output($output);
+		$this->tw_output($output);
 	}
-	public function it_output($output = null)
+	public function tw_output($output = null)
 	{
 		$this->load->view('it_tw.php',$output);
+	}
+
+	public function computers()
+	{
+		$crud = new grocery_CRUD();
+
+		$crud->set_theme('datatables');
+		$crud->set_table('computers');
+
+		$output = $crud->render();
+
+		$this->comp_output($output);
+	}
+	public function comp_output($output = null)
+	{
+		$this->load->view('it_computers.php',$output);
 	}
 
 	public function cart()
@@ -53,6 +69,23 @@ class It extends CI_Controller {
 		$this->load->view('cartridges.php',$output);
 	}
 
+	public function printers()
+	{
+		$crud = new grocery_CRUD();
+
+		$crud->set_theme('datatables');
+		$crud->set_table('it_equip_printers');
+
+		$output = $crud->render();
+
+		$this->printers_res($output);
+	}
+
+	public function printers_res($output = null)
+	{
+		$this->load->view('it_printers.php',$output);
+	}
+
 	public function give_cart()
 	{
 		$this->load->view('give_cart');
@@ -69,5 +102,8 @@ class combobox extends CI_Controller  {
         $data['name'] = $this->pagination_model->getPrinters();
         $this->load->view('give_cart', $data);
    }
-
 }
+?>
+
+
+
