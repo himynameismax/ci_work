@@ -1,3 +1,10 @@
+<link rel="stylesheet" href="<?=base_url()?>assets/plugins/source/jquery.fancybox.css" type="text/css" media="screen" />
+<script type="text/javascript" src="<?=base_url()?>assets/plugins/source/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$(".fancybox").fancybox();
+});
+</script>
 <?php
 	$this->set_css($this->default_theme_path.'/flexigrid/css/flexigrid.css');
 	$this->set_js_lib($this->default_javascript_path.'/'.grocery_CRUD::JQUERY);
@@ -19,8 +26,8 @@
 	$this->set_js($this->default_theme_path.'/flexigrid/js/jquery.printElement.min.js');
 
 	/** Fancybox */
-	$this->set_css($this->default_css_path.'/jquery_plugins/fancybox/jquery.fancybox.css');
-	$this->set_js($this->default_javascript_path.'/jquery_plugins/jquery.fancybox-1.3.4.js');
+	$this->set_css($this->default_css_path.'jquery.fancybox.css');
+	$this->set_js($this->default_javascript_path.'jquery.fancybox.js');
 	$this->set_js($this->default_javascript_path.'/jquery_plugins/jquery.easing-1.3.pack.js');
 
 	/** Jquery UI */
@@ -59,7 +66,7 @@ if($success_message !== null){?>
 	<div class="tDiv">
 		<?php if(!$unset_add){?>
 		<div class="tDiv2">
-        	<a href='<?php echo $add_url?>' title='<?php echo $this->l('list_add'); ?> <?php echo $subject?>' class='add-anchor add_button'>
+        	<a href='<?php echo $add_url?>' title='<?php echo $this->l('list_add'); ?> <?php echo $subject?>' class='various fancybox.ajax'>
 			<div class="fbutton">
 				<div>
 					<span class="add"><?php echo $this->l('list_add'); ?> <?php echo $subject?></span>

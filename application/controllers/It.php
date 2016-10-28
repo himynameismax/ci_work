@@ -38,8 +38,16 @@ class It extends CI_Controller {
 	{
 		$crud = new grocery_CRUD();
 
-		$crud->set_theme('datatables');
+
+
 		$crud->set_table('computers');
+		$crud->order_by('name');
+		$crud->columns('name','username', 'password');
+
+		$crud->callback_column('name',array($this,'_callback_test_function'));
+
+		
+		$crud->set_theme('flexigrid');
 
 		$output = $crud->render();
 
@@ -54,7 +62,8 @@ class It extends CI_Controller {
 	{
 		$crud = new grocery_CRUD();
 
-		$crud->add_action('Take','','give_cart');
+		$crud->add_action('Take', '','/it/give_cart','', '');
+		
 
 		$crud->set_theme('datatables');
 		$crud->set_table('cartridges');
@@ -64,9 +73,19 @@ class It extends CI_Controller {
 		$this->cart_res($output);
 	}
 
+	public function give_cart()
+	{
+		$this->load->view('give_cart');
+	}
+
 	public function cart_res($output = null)
 	{
 		$this->load->view('cartridges.php',$output);
+	}
+
+	public function _callback_test_function($value, $row)
+	{
+  		return "<a href='http://www.grocerycrud.com/assets/themes/default/images/logo.png' class='fancybox'>$value</a>";
 	}
 
 	public function printers()
@@ -86,11 +105,7 @@ class It extends CI_Controller {
 		$this->load->view('it_printers.php',$output);
 	}
 
-	public function give_cart()
-	{
-		$this->load->view('give_cart');
-	}
-
+	
 
 }
 
@@ -98,8 +113,8 @@ class combobox extends CI_Controller  {
  
    function dynamic_combobox(){
      // retrieve the album and add to the data array
-        $this->load->model('pagination_model');
-        $data['name'] = $this->pagination_model->getPrinters();
+        $this->load->model('combobox_model');
+        $data['it_equip_printers'] = $this->combobox_model->getPrn();
         $this->load->view('give_cart', $data);
    }
 }

@@ -21,8 +21,8 @@
   </head>
 <body>
 
-    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
-      <a class="navbar-brand" href="/it"><img src="../assets/img/corp_logo.png" width="40%"></a>
+    <nav class="navbar navbar-fixed-top navbar-dark navbar-inverse">
+      <!-- <a class="navbar-brand" href="/it"><img src="../assets/img/corp_logo.png" width="40%"></a> -->
       <ul class="nav navbar-nav">
         <li class="nav-item active">
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>

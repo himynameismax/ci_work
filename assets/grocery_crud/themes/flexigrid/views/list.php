@@ -1,3 +1,10 @@
+<link rel="stylesheet" href="<?=base_url()?>assets/plugins/source/jquery.fancybox.css" type="text/css" media="screen" />
+<script type="text/javascript" src="<?=base_url()?>assets/plugins/source/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$(".fancybox").fancybox();
+});
+</script>
 <?php 
 
 	$column_width = (int)(80/count($columns));

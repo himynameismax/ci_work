@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Cartridges</title>
-    <meta charset="utf-8" />
+<title>Computers</title>
+	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php 
 foreach($css_files as $file): ?>
@@ -15,13 +15,10 @@ foreach($css_files as $file): ?>
 <?php endforeach; ?>
 </head>
 <body>
-    <?php $this->load->view('it_header');?>
-
-    <div style='height:20px; margin-top: 50px'></div>  
+	<?php $this->load->view('it_header');?>
+	<div style='height:20px; margin-top: 50px'></div>  
     <div>
-        <?php echo $output; ?>
+		<?php echo $output; ?>
     </div>
-
-    <a href="/it/give_cart" class="btn btn-info" role="button">Give Cartridge</a>
 </body>
 </html>
