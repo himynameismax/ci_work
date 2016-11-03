@@ -7,6 +7,6 @@ $this->load->view('it_header'); ?>
 <br>
 <br>
 <br>
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" margin="100px">Open Modal</button>
+
 
 <?php $this->load->view('it_footer');?>

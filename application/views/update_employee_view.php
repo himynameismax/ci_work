@@ -1,22 +1,3 @@
-<!-- 
-
-<select name="printers">
-<?php foreach($prns as $prn){?>
- <option value="<?php echo $prn->prn_id; ?>"><?php echo $prn->prn_name;?></option>
- <?php }?>
-</select>
-<?php foreach($prn_par as $prn_p){?>
- <?php echo $prn_p->prn_location; ?>
- <?php }?>
-
-<br><br>
-
-
-<input type="text" name="given_num">
-
-<input type="submit" name=""> -->
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeIgniter Update Database Demo | CodeIgniter Update Query</title>
     <!--link the bootstrap css file-->
-    <link href="<?php echo base_url("assets/css/bootstrap.css"); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url("assets/bootstrap/css/bootstrap.css"); ?>" rel="stylesheet" type="text/css" />
     <!-- link jquery ui css-->
     <link href="<?php echo base_url('assets/jquery-ui-1.11.2/jquery-ui.min.css'); ?>" rel="stylesheet" type="text/css" />
     <!--include jquery library-->
-    <script src="<?php echo base_url('assets/js/jquery-3.1.1.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/jquery-1.10.2.js'); ?>"></script>
     <!--load jquery ui js file-->
     <script src="<?php echo base_url('assets/jquery-ui-1.11.2/jquery-ui.min.js'); ?>"></script>
         
@@ -56,7 +37,7 @@
         <legend>CodeIgniter Update Database Demo</legend>
         <?php 
         $attributes = array("class" => "form-horizontal", "id" => "employeeform", "name" => "employeeform");
-        echo form_open("it/give_cart/" . $prn_name, $attributes);?>
+        echo form_open("updateEmployee/index/" . $empno, $attributes);?>
         <fieldset>
             
             <div class="form-group">

@@ -31,6 +31,9 @@
           <a class="nav-link" href="/it/tech_work">TW</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="http://service/osticket">OST</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="/it/computers">PC</a>
         </li>
         <li class="dropdown">
@@ -40,6 +43,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a href="/it/depts">Depts</a></li>
+            <li><a href="/it/msoffice">MS Office</a></li>
             <li class="divider"></li>
           </ul>
         </li>
