@@ -1,0 +1,9 @@
+Test
+2016-08-23 18:53:34 [2@service]
+  *** PHP Notice(8): Undefined index: Computer
+  Backtrace :
+  inc/massiveaction.class.php:1283                   
+  ...ins/ocsinventoryng/inc/ocsserver.class.php:6469 MassiveAction->itemDone()
+  inc/massiveaction.class.php:994                    PluginOcsinventoryngOcsServer::processMassiveActionsForOneItemtype()
+  inc/massiveaction.class.php:973                    MassiveAction->processForSeveralItemtypes()
+  front/massiveaction.php:64                         MassiveAction->process()

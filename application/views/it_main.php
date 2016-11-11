@@ -7,6 +7,6 @@ $this->load->view('it_header'); ?>
 <br>
 <br>
 <br>
-
+<?php $this->load->view('it_sidebar');?>
 
 <?php $this->load->view('it_footer');?>

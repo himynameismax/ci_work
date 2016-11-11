@@ -1,0 +1,119 @@
+2016-08-23 17:43:39 [2@service]
+  *** MySQL query error:
+  SQL: 
+INSERT INTO `glpi_crontasks` VALUES (NULL,\'PluginOcsinventoryngOcsServer\',\'ocsng\',\'300\',NULL,\'0\',\'1\',\'3\',\'0\',\'24\',\'30\',NULL,NULL,NULL);
+  Error: Column count doesn't match value count at row 1
+  Backtrace :
+  inc/dbmysql.class.php:508                          
+  plugins/ocsinventoryng/hook.php:43                 DBmysql->runFile()
+  inc/plugin.class.php:664                           plugin_ocsinventoryng_install()
+  :                                                  Plugin->install()
+  front/plugin.form.php:49                           call_user_func()
+2016-08-23 17:43:39 [2@service]
+  *** MySQL query error:
+  SQL: INSERT INTO `glpi_notificationtemplates`
+                VALUES (NULL, \'Computers not imported\', \'PluginOcsinventoryngNotimportedcomputer\',
+                        NOW(), \'\', NULL);
+  Error: Column count doesn't match value count at row 1
+  Backtrace :
+  inc/dbmysql.class.php:204                          
+  plugins/ocsinventoryng/hook.php:674                DBmysql->queryOrDie()
+  inc/plugin.class.php:664                           plugin_ocsinventoryng_install()
+  :                                                  Plugin->install()
+  front/plugin.form.php:49                           call_user_func()
+2016-08-23 17:44:16 [2@service]
+  *** MySQL query error:
+  SQL: INSERT INTO `glpi_notificationtemplates`
+                VALUES (NULL, \'Computers not imported\', \'PluginOcsinventoryngNotimportedcomputer\',
+                        NOW(), \'\', NULL);
+  Error: Column count doesn't match value count at row 1
+  Backtrace :
+  inc/dbmysql.class.php:204                          
+  plugins/ocsinventoryng/hook.php:674                DBmysql->queryOrDie()
+  inc/plugin.class.php:664                           plugin_ocsinventoryng_install()
+  :                                                  Plugin->install()
+  front/plugin.form.php:49                           call_user_func()
+2016-08-23 17:46:37 [2@service]
+  *** MySQL query error:
+  SQL: INSERT INTO `glpi_notificationtemplates`
+                VALUES (NULL, \'Computers not imported\', \'PluginOcsinventoryngNotimportedcomputer\',
+                        NOW(), \'\', NULL);
+  Error: Column count doesn't match value count at row 1
+  Backtrace :
+  inc/dbmysql.class.php:204                          
+  plugins/ocsinventoryng/hook.php:674                DBmysql->queryOrDie()
+  inc/plugin.class.php:664                           plugin_ocsinventoryng_install()
+  :                                                  Plugin->install()
+  front/plugin.form.php:49                           call_user_func()
+2016-08-23 17:46:52 [2@service]
+  *** MySQL query error:
+  SQL: INSERT INTO `glpi_notificationtemplates`
+                VALUES (NULL, \'Computers not imported\', \'PluginOcsinventoryngNotimportedcomputer\',
+                        NOW(), \'\', NULL);
+  Error: Column count doesn't match value count at row 1
+  Backtrace :
+  inc/dbmysql.class.php:204                          
+  plugins/ocsinventoryng/hook.php:674                DBmysql->queryOrDie()
+  inc/plugin.class.php:664                           plugin_ocsinventoryng_install()
+  :                                                  Plugin->install()
+  front/plugin.form.php:49                           call_user_func()
+2016-08-23 17:53:06 [2@service]
+  *** MySQL query error:
+  SQL: INSERT INTO `glpi_notificationtemplates`
+                VALUES (NULL, \'Computers not imported\', \'PluginOcsinventoryngNotimportedcomputer\',
+                        NOW(), \'\', NULL);
+  Error: Column count doesn't match value count at row 1
+  Backtrace :
+  inc/dbmysql.class.php:204                          
+  plugins/ocsinventoryng/hook.php:674                DBmysql->queryOrDie()
+  inc/plugin.class.php:664                           plugin_ocsinventoryng_install()
+  :                                                  Plugin->install()
+  front/plugin.form.php:49                           call_user_func()
+2016-08-23 17:56:16 [2@service]
+  *** MySQL query error:
+  SQL: INSERT INTO `glpi_notificationtemplates`
+                VALUES (NULL, \'Computers not imported\', \'PluginOcsinventoryngNotimportedcomputer\',
+                        NOW(), \'\', NULL);
+  Error: Column count doesn't match value count at row 1
+  Backtrace :
+  inc/dbmysql.class.php:204                          
+  plugins/ocsinventoryng/hook.php:674                DBmysql->queryOrDie()
+  inc/plugin.class.php:664                           plugin_ocsinventoryng_install()
+  :                                                  Plugin->install()
+  front/plugin.form.php:49                           call_user_func()
+2016-08-24 08:54:57 [2@service]
+  *** MySQL query error:
+  SQL: SELECT * FROM `glpi_taskemplates` WHERE `entities_id` = 1
+  Error: Table 'glpi.glpi_taskemplates' doesn't exist
+  Backtrace :
+  inc/dbmysql.class.php:863                          
+  inc/dbmysql.class.php:549                          DBmysqlIterator->__construct()
+  inc/commondbtm.class.php:565                       DBmysql->request()
+  inc/commondbtm.class.php:490                       CommonDBTM->cleanRelationData()
+  inc/commondbtm.class.php:1342                      CommonDBTM->deleteFromDB()
+  inc/massiveaction.class.php:1079                   CommonDBTM->delete()
+  inc/massiveaction.class.php:994                    MassiveAction::processMassiveActionsForOneItemtype()
+  inc/massiveaction.class.php:973                    MassiveAction->processForSeveralItemtypes()
+  front/massiveaction.php:64                         MassiveAction->process()
+2016-08-30 18:58:15 [2@service]
+  *** MySQL query error:
+  SQL: SELECT COUNT(*) AS cpt
+                            FROM `glpi_taskemplates`
+                            WHERE `entities_id` = \'4\'
+  Error: Table 'glpi.glpi_taskemplates' doesn't exist
+  Backtrace :
+  inc/commondropdown.class.php:498                   
+  front/dropdown.common.form.php:77                  CommonDropdown->isUsed()
+  front/entity.form.php:48                           include()
+2016-08-30 18:58:15 [2@service]
+  *** MySQL query error:
+  SQL: SELECT * FROM `glpi_taskemplates` WHERE `entities_id` = 4
+  Error: Table 'glpi.glpi_taskemplates' doesn't exist
+  Backtrace :
+  inc/dbmysql.class.php:863                          
+  inc/dbmysql.class.php:549                          DBmysqlIterator->__construct()
+  inc/commondbtm.class.php:565                       DBmysql->request()
+  inc/commondbtm.class.php:490                       CommonDBTM->cleanRelationData()
+  inc/commondbtm.class.php:1342                      CommonDBTM->deleteFromDB()
+  front/dropdown.common.form.php:84                  CommonDBTM->delete()
+  front/entity.form.php:48                           include()

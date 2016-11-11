@@ -2,6 +2,14 @@ Options +FollowSymLinks
 Options -Indexes
 DirectoryIndex index.php
 RewriteEngine on
+
+RewriteBase /ocsinventory
+
+RewriteCond %{REQUEST_URI} !^/osticket [OR]
+RewriteCond %{REQUEST_URI} !^/glpi [OR]
+RewriteCond %{REQUEST_URI} !^/ocsinventory-reports
+
+
 RewriteCond $1 !^(index\.php|images|robots\.txt|public)
 RewriteCond %{REQUEST_URI} !\.(css¦js¦jpg¦gif)$
 RewriteCond %{REQUEST_FILENAME} !-f
