@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Телефонный справочник ТД НКМЗ</title>
+<title>Управление компаниями</title>
 <?php 
 foreach($css_files as $file): ?>
     <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
@@ -13,8 +13,9 @@ foreach($css_files as $file): ?>
 <?php endforeach; ?>
 
 	<?php $this->load->view('/parts/main_header');?>
-	<?php $this->load->view('parts/phones_sidebar'); ?>
-
+    <br>
+    <br>
+    <br>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">

@@ -14,13 +14,11 @@ foreach($css_files as $file): ?>
 
 	<?php $this->load->view('/parts/main_header');?>
 	<?php $this->load->view('parts/phones_sidebar'); ?>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
+<br>
+<br>
+<br>
+            <div class="col-md-9 col-md-offset-3 content">
                         <?php echo $output; ?>
-                    </div>
-                </div>
             </div>
 
 

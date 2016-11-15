@@ -12,8 +12,8 @@ foreach($css_files as $file): ?>
     <script src="<?php echo $file; ?>"></script>
 <?php endforeach; ?>
 
-	<?php $this->load->view('/parts/main_header');?>
-	<?php $this->load->view('parts/phones_sidebar'); ?>
+    <?php $this->load->view('/parts/main_header');?>
+    
 
             <div class="container">
                 <div class="row">
@@ -24,6 +24,6 @@ foreach($css_files as $file): ?>
             </div>
 
 
-		
+        
 </body>
 </html>

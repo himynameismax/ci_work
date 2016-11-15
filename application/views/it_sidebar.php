@@ -10,10 +10,10 @@
     <meta name="author" content="">
 
     <!-- Bootstrap Core CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="assets/css/simple-sidebar.css" rel="stylesheet">
+    <link href="../assets/css/simple-sidebar.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,25 +37,19 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">Dashboard</a>
+                    <a href="computers">Компьютеры</a>
                 </li>
                 <li>
-                    <a href="#">Shortcuts</a>
+                    <a href="licences">Лицензии</a>
                 </li>
                 <li>
-                    <a href="#">Overview</a>
+                    <a href="">IP адреса</a>
                 </li>
                 <li>
-                    <a href="#">Events</a>
+                    <a href="audit">Аудит</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
+                    <a href="equip">Расходники</a>
                 </li>
             </ul>
         </div>
@@ -66,14 +60,12 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>Simple Sidebar</h1>
-                        <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+                        <?php  echo $output; ?>
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
                     </div>
                 </div>
             </div>
-        </div>
+</div>
         <!-- /#page-content-wrapper -->
 
     </div>

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Phones extends CI_Controller {
+class Manage extends CI_Controller {
 
 	public function __construct()
 	{
@@ -15,25 +15,22 @@ class Phones extends CI_Controller {
 	public function index()
 	{
 		$this->load->helper('url');
-		$this->load->view('phones_main.php');
+		$this->load->view('mng_main.php');
 	}
-	public function all()
+	public function orgs()
 	{
 		$crud = new grocery_CRUD();
 
 		$crud->set_theme('datatables');
-		$crud->set_table('phones_all');
-		$crud->set_relation('id_org', 'org_organizations', 'org_name');
-		$crud
-			->display_as('post', 'Должность')->display_as('name', 'Имя')->display_as('external', 'Внутренний')->display_as('internal', 'Внешний')->display_as('location', 'Кабинет')->display_as('id_org', 'Организация');
+		$crud->set_table('org_organizations');
 
 		$output = $crud->render();
 
-		$this->ph_all_output($output);
+		$this->orgs_output($output);
 	}
-	public function ph_all_output($output = null)
+	public function orgs_output($output = null)
 	{
-		$this->load->view('parts/phones_all',$output);
+		$this->load->view('mng_orgs',$output);
 	}
 
 
