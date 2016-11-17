@@ -17,7 +17,7 @@ foreach($css_files as $file): ?>
 <br>
 <br>
 <br>
-            <div class="col-md-9 col-md-offset-3 content">
+            <div class="col-sm-9 col-sm-offset-1">
                         <?php echo $output; ?>
             </div>
 

@@ -27,11 +27,19 @@
       <a class="navbar-brand" href="#">NKMZ</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="/manage"><span class="glyphicon glyphicon-pencil"></span> Управление</a></li>
+      <li><a href="/it"><span class="glyphicon glyphicon-console"></span> IT</a></li>
+      <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-pencil"></span> Управление<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="/manage/orgs">Организации</a></li>
+                <li><a href="/manage/departs">Отделы</a></li>
+            </ul>
+
+      </li>
       <li><a href="http://192.168.100.3/support" target="blank"><span class="glyphicon glyphicon-wrench"></span> Техническая поддержка</a></li>
       <li><a href="/phones/all"><span class="glyphicon glyphicon-phone-alt"></span> Телефонный справочник</a></li>
       <li><a href="https://192.168.11.16:8443" target="blank"><span class="glyphicon glyphicon-envelope"></span> Почта</a></li>
-      <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Войти</a></li>
+      <li><a href="Auth"><span class="glyphicon glyphicon-log-in"></span> Войти</a></li>
     </ul>
   </div>
 </nav>

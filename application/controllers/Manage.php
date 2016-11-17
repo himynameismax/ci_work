@@ -21,7 +21,7 @@ class Manage extends CI_Controller {
 	{
 		$crud = new grocery_CRUD();
 
-		$crud->set_theme('datatables');
+		$crud->set_theme('flexigrid');
 		$crud->set_table('org_organizations');
 
 		$output = $crud->render();
@@ -34,19 +34,23 @@ class Manage extends CI_Controller {
 	}
 
 
-	public function td_nkmz()
+	public function departs()
 	{
 		$crud = new grocery_CRUD();
 
-		$crud->set_theme('datatables');
-		$crud->set_table('phones_td');
+		$crud->set_theme('flexigrid');
+		$crud->set_table('org_departs');
+
+		$crud->set_relation('org_id', 'org_organizations', 'org_name');
+		$crud
+			->display_as('dep_name', 'Название отдела')->display_as('org_id', 'Организация');
 
 		$output = $crud->render();
 
-		$this->ph_td_output($output);
+		$this->departs_output($output);
 	}
-	public function ph_td_output($output = null)
+	public function departs_output($output = null)
 	{
-		$this->load->view('phones_td',$output);
+		$this->load->view('mng_departs',$output);
 	}
 }
