@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-$this->load->view('/parts/main_header'); ?>
+$this->load->view('/admin/admin_header'); ?>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
@@ -7,6 +7,6 @@ $this->load->view('/parts/main_header'); ?>
 <br>
 <br>
 <br>
-<?php $this->load->view('it_sidebar');?>
+<?php $this->load->view('/admin/it_sidebar');?>
 
-<?php $this->load->view('it_footer');?>
+<?php $this->load->view('footer');?>

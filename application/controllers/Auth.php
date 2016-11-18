@@ -41,7 +41,6 @@ class Auth extends MY_Controller {
 				redirect("dashboard");
 			}
 		}
-
 		$this->load->view("header");		
 		$this->load->view("auth");
 		$this->load->view("footer");
@@ -51,7 +50,7 @@ class Auth extends MY_Controller {
 	{
 		$this->session->unset_userdata("logged_in");
 		$this->session->sess_destroy();
-		redirect("auth");
+		redirect("home");
 	}
 
 }

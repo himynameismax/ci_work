@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-session_start(); //we need to call PHP's session object to access it through CI
-class Home extends CI_Controller {
+
+class Home extends MY_Controller {
  
  function __construct()
  {
@@ -9,17 +9,10 @@ class Home extends CI_Controller {
  
  function index()
  {
-   if($this->session->userdata('logged_in'))
-   {
-     $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];
-     $this->load->view('it_main', $data);
-   }
-   else
-   {
-     //If no session, redirect to login page
-     redirect('login', 'refresh');
-   }
+    $this->load->view("all_header");
+    // $this->load->view("navbar");
+    $this->load->view("all");
+    $this->load->view("footer");
  }
  
  function logout()

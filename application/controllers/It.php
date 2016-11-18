@@ -1,8 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class It extends CI_Controller {
+class It extends MY_Controller {
 
+	// protected $access = "Admin";
 	public function __construct()
 	{
 		parent::__construct();
@@ -13,10 +14,12 @@ class It extends CI_Controller {
 		$this->load->model('Cb_model');
 	}
 
+	
+
 	public function index()
 	{
 		$this->load->helper('url');
-		$this->load->view('it_main');
+		$this->load->view('/admin/it_main');
 	}
 
 	public function tech_work()

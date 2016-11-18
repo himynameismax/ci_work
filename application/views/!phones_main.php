@@ -13,4 +13,4 @@ $this->load->view('parts/main_header'); ?>
 <br>
 <?php $this->load->view('parts/phones_sidebar');?>
 
-<?php $this->load->view('it_footer');?>
+<?php $this->load->view('footer');?>

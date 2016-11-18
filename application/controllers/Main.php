@@ -4,13 +4,13 @@
  * This controller can be accessed 
  * for all logged in users
  */
-class Dashboard extends MY_Controller {	
+class Main extends MY_Controller {	
 
 	public function index()
 	{
-		$this->load->view("parts/main_header");
+		$this->load->view("parts/all_header");
 		// $this->load->view("navbar");
-		$this->load->view("dashboard");
+		$this->load->view("all");
 		$this->load->view("footer");
 	}
 
