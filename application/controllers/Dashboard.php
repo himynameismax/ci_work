@@ -4,14 +4,17 @@
  * This controller can be accessed 
  * for all logged in users
  */
+
 class Dashboard extends MY_Controller {	
+	protected $access = "Admin";
 
 	public function index()
 	{
-		$this->load->view("parts/main_header");
+		$this->load->view("admin/admin_header");
 		// $this->load->view("navbar");
 		$this->load->view("dashboard");
 		$this->load->view("footer");
 	}
 
 }
+?>

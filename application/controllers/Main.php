@@ -4,7 +4,7 @@
  * This controller can be accessed 
  * for all logged in users
  */
-class Main extends MY_Controller {	
+class Main extends CI_Controller {	
 
 	public function index()
 	{

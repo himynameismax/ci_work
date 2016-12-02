@@ -14,8 +14,7 @@ class Phones extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->helper('url');
-		$this->load->view('phones_main.php');
+		redirect('/phones/all');
 	}
 	public function all()
 	{
@@ -33,7 +32,7 @@ class Phones extends CI_Controller {
 	}
 	public function ph_all_output($output = null)
 	{
-		$this->load->view('parts/phones_all',$output);
+		$this->load->view('content/phones/phones_all',$output);
 	}
 
 

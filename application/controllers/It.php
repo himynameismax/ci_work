@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class It extends MY_Controller {
 
-	// protected $access = "Admin";
+	protected $access = "Admin";
 	public function __construct()
 	{
 		parent::__construct();

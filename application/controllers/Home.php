@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Home extends MY_Controller {
+class Home extends CI_Controller {
  
  function __construct()
  {
@@ -9,9 +9,9 @@ class Home extends MY_Controller {
  
  function index()
  {
-    $this->load->view("all_header");
+    $this->load->view("headers/all_header");
     // $this->load->view("navbar");
-    $this->load->view("all");
+    $this->load->view("content/all");
     $this->load->view("footer");
  }
  
