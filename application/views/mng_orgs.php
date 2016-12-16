@@ -12,7 +12,7 @@ foreach($css_files as $file): ?>
     <script src="<?php echo $file; ?>"></script>
 <?php endforeach; ?>
 
-	<?php $this->load->view('/parts/main_header');?>
+	<?php $this->load->view('/admin/admin_header');?>
     <br>
     <br>
     <br>

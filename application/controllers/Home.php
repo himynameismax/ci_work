@@ -12,6 +12,7 @@ class Home extends CI_Controller {
     $this->load->view("headers/all_header");
     // $this->load->view("navbar");
     $this->load->view("content/all");
+    $this->load->view("deficite");
     $this->load->view("footer");
  }
  

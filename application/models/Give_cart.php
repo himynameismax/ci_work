@@ -45,7 +45,7 @@
             }
 
             public function getCart(){
-                $this->db->select('name');
+                $this->db->select('name, current, required');
                 $this->db->distinct();
                 // $this->db->from('it_equip_printers');
                 $this->db->order_by('name');
@@ -59,5 +59,26 @@
                 }
             return $return;
             }
+
+            public function getOpList(){
+                $sql = 'select cart_name, prn_name, prn_location, op_date from it_cart_given';
+                $query = $this->db->query($sql);
+                $result = $query->result();
+                return $result;
+            }
+            public function getCarts(){
+                $sql = 'select name, current, required from cartridges';
+                $query = $this->db->query($sql);
+                $result = $query->result();
+                return $result;
+            }
+
+            function valComp(){
+                $this->db->where('current < required');
+                $res = $this->db->get("cartridges")->result();
+                return $res;
+            }
+
+
     }
 ?>
