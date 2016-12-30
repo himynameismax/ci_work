@@ -45,4 +45,5 @@
                               </tr>
                     </tbody>
                </table>
+               <a href="http://service/carts">Подробнее</a>
     </div>

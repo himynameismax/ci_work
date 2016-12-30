@@ -2,8 +2,19 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 class Email extends CI_Controller
 {
+    public function __construct() 
+    {
+        parent::__construct();
+        $this->load->model('give_cart');
+    }
+    public function def(){
+        
+    }
     public function index()
     {
+        $data['def'] = $this->give_cart->valComp();
+        $this->load->view('deficite', $data);
+        $this->load->model('');
         // Set SMTP Configuration
         $emailConfig = [
             'protocol' => 'smtp', 
@@ -20,11 +31,11 @@ class Email extends CI_Controller
             'name' => 'Support'
         ];
        
-        $to = array('maksim.sokolov@nkmz.ru');
+        $to = array('valera.oreshkin@nkmz.ru');
         $subject = 'Малое количество картриджей на складе';
       //  $message = 'Type your gmail message here'; // use this line to send text email.
         // load view file called "welcome_message" in to a $message variable as a html string.
-        $message =  $this->load->view('cart_give',[],true); 
+        $message =  $this->load->view('deficite',$data,true); 
         // Load CodeIgniter Email library
         $this->load->library('email', $emailConfig);
         // Sometimes you have to set the new line character for better result

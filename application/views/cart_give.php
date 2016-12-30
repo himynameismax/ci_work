@@ -60,7 +60,7 @@
                 <div class="col-xs-3">
                 <?php
                   $attributes = 'class = "form-control"';
-                  echo form_dropdown('name', $carts, 'Kyosera TK-450', $attributes); ?><br>
+                  echo form_dropdown('out_name', $carts, '', $attributes); ?><br>
                 <?php 
                   $attributes = 'class = "form-control"';
                   echo form_dropdown('prn_name', $printers, 'name="prn_name"', $attributes); ?><br>
@@ -68,17 +68,17 @@
                   $attributes = 'class = "form-control"';
                   echo form_dropdown('prn_location', $printers_loc, 'name="prn_location"', $attributes); ?>
                 </div>
-      <input type="submit" name="submit" class="btn btn-primary" value="GO" id="out"/>
+      <input type="submit" name="submit" class="btn btn-primary" value="OUT" id="out"/>
     </div>
     <div id="menu2" class="tab-pane fade">
-    <form id="box-in" action="<?php echo site_url("carts/cartIn"); ?>" method="post" enctype="multipart/form-data">
+    <!-- <form id="box-in" action="<?php echo site_url("carts/cartIn"); ?>" method="post" enctype="multipart/form-data"> -->
       <div class="col-xs-3">
       <?php
         $attributes = 'class = "form-control"';
-        echo form_dropdown('name', $carts, 'Kyosera TK-450', $attributes); ?><br>
-        <input class="form-control" id="inputdefault" type="text">
+        echo form_dropdown('in_name', $carts, '', $attributes); ?><br>
+        <input class="form-control" name="cart_amount" type="text">
       </div>
-      <input type="submit" name="submit" class="btn btn-primary" value="GO" id="in"/>
+      <input type="submit" name="submit" class="btn btn-primary" value="IN" id="in"/>
     </div>
     <div id="menu3" class="tab-pane fade">
                     <table class="table table-striped table-hover">
@@ -109,7 +109,7 @@
 
 </body>
 </html>
-<li class="active"><a href="#" data-toggle="modal" data-target="#myModal">Contact</a></li>
+<!-- <li class="active"><a href="#" data-toggle="modal" data-target="#myModal">Contact</a></li>
 <div id="myModal" class="modal fade" aria-labelledby="myModalLabel" aria-hidden="true" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -143,4 +143,4 @@
             <?php echo form_close(); ?>            
         </div>
     </div>
-</div>
+</div> -->
