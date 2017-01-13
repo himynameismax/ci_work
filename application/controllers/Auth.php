@@ -1,56 +1,88 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+/*
+ * This file is part of Auth_Ldap.
+
+    Auth_Ldap is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Auth_Ldap is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Auth_Ldap.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ */
 
 /**
- * This controller can be accessed 
- * for (all) non logged in users
+ * @author      Greg Wojtak <gwojtak@techrockdo.com>
+ * @copyright   Copyright © 2010,2011 by Greg Wojtak <gwojtak@techrockdo.com>
+ * @package     Auth_Ldap
+ * @subpackage  auth demo
+ * @license     GNU Lesser General Public License
  */
-class Auth extends MY_Controller {	
+class Auth extends CI_Controller {
+    function __construct() {
+        parent::__construct();
 
-	public function logged_in_check()
-	{
-		if ($this->session->userdata("logged_in")) {
-			redirect("dashboard");
-		}
-	}
+        $this->load->helper('form');
+        $this->load->library('Form_validation');
+        $this->load->library('Auth_Ldap');
+        $this->load->helper('url');
+        $this->load->library('table');
+    }
 
-	public function index()
-	{	
-		$this->logged_in_check();
-		
-		$this->load->library('form_validation');
-		$this->form_validation->set_rules("username", "Username", "trim|required");
-		$this->form_validation->set_rules("password", "Password", "trim|required");
-		if ($this->form_validation->run() == true) 
-		{
-			$this->load->model('auth_model', 'auth');	
-			// check the username & password of user
-			$status = $this->auth->validate();
-			if ($status == ERR_INVALID_USERNAME) {
-				$this->session->set_flashdata("error", "Username is invalid");
-			}
-			elseif ($status == ERR_INVALID_PASSWORD) {
-				$this->session->set_flashdata("error", "Password is invalid");
-			}
-			else
-			{
-				// success
-				// store the user data to session
-				$this->session->set_userdata($this->auth->get_data());
-				$this->session->set_userdata("logged_in", true);
-				// redirect to dashboard
-				redirect("dashboard");
-			}
-		}
-		$this->load->view("header");		
-		$this->load->view("auth");
-		$this->load->view("footer");
-	}
+    function index() {
+        $this->session->keep_flashdata('tried_to');
+        $this->login();
+        // $this->load->view('ldap');
+    }
 
-	public function logout()
-	{
-		$this->session->unset_userdata("logged_in");
-		$this->session->sess_destroy();
-		redirect("home");
-	}
+    function login($errorMsg = NULL){
+        $this->session->keep_flashdata('tried_to');
+        if(!$this->auth_ldap->is_authenticated()) {
+            // Set up rules for form validation
+            $rules = $this->form_validation;
+            $rules->set_rules('username', 'Username', 'required');
+            $rules->set_rules('password', 'Password', 'required');
 
+            // Do the login...
+            if($rules->run() && $this->auth_ldap->login(
+                    $rules->set_value('username'),
+                    $rules->set_value('password'))) {
+                // Login WIN!
+                if($this->session->flashdata('tried_to')) {
+                    redirect($this->session->flashdata('tried_to'));
+                }else {
+                    redirect('/home/');
+                }
+            }else {
+                // Login FAIL
+                $this->load->view('auth/login_form', array('login_fail_msg'
+                                        => 'Error with LDAP authentication.'));
+            }
+        }else {
+                // Already logged in...
+                redirect('/home/');
+        }
+    }
+
+    function logout() {
+        if($this->session->userdata('logged_in')) {
+            $data['name'] = $this->session->userdata('cn');
+            $data['username'] = $this->session->userdata('username');
+            $data['logged_in'] = TRUE;
+            $this->auth_ldap->logout();
+        } else {
+            
+            $data['logged_in'] = FALSE;
+        }
+        $this->load->view('content/all', $data);
+        
+    }
 }
+
+?>
