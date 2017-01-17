@@ -7,23 +7,23 @@
 		.top-buffer { margin-top:20px; }
 	</style>
 
-<!--     <div class="col-lg-4 col-lg-offset-4" style="background-color: #EEEEEE"">
+    <div class="col-lg-4 col-lg-offset-4" style="background-color: #EEEEEE"">
     	<div class="col-xs-3 top-buffer" style="margin-left: 20px">
-    		<p><b>Заявка № 1</b></p><br>
+    		<p><b>Заявка №</b></p><br>
     		<p><b>Автор</b></p><br>
     		<p><b>Телефон</b></p><br>
     		<p><b>Файлы</b></p><br>
     		<p><b>Комментарий</b></p><br>
     	</div>
     	<div class="col-xs-3 top-buffer" style="margin-left: 20px">
-    		<p><b>Заявка № 1</b></p><br>
-    		<p><b>Автор</b></p><br>
-    		<p><b>Телефон</b></p><br>
-    		<p><b>Файлы</b></p><br>
-    		<p><b>Комментарий</b></p><br>
+    		<p><b><?php  print $no;?></b></p><br>
+    		<p><b><?php  print $fio;?></b></p><br>
+    		<p><b><?php  print $phone;?></b></p><br>
+    		<p><b></b></p><br>
+    		<p><b></b></p><br>
     	</div>
 
-    </div> -->
+    </div>
 
 
-    <?php  $reqlist;?>
+    

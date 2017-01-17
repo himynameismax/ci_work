@@ -19,7 +19,7 @@
                          <?php for ($i = 0; $i < count($reqs); ++$i) { ?>
                               <tr>
                                   <td><?php echo ($i+1); ?></td>
-                                  <td><?php echo $reqs[$i]->fio; ?></td>
+                                  <td><a href="show/<?php echo $reqs[$i]->id; ?>"><?php echo $reqs[$i]->fio; ?></a></td>
                                   <td><?php echo $reqs[$i]->phone; ?></td>
                                   <td><?php echo $reqs[$i]->time; ?></td>
                                   <td><?php echo $reqs[$i]->status; ?></td>
@@ -27,5 +27,11 @@
                               </tr>
                     </tbody>
                </table>
+<!-- <?php for ($i = 0; $i < count($reqs); ++$i) { ?>
+  <a href="<?php echo $reqs[$i]->id; ?>"><?php echo $reqs[$i]->id; ?></a>
+<?php } ?> -->
+<!-- <?php print $title; ?> -->
+
+
 
                <script type="text/javascript" src="<?php echo base_url(); ?>assets/lightbox/js/lightbox.js"></script>

@@ -66,7 +66,7 @@ class Requests extends CI_Controller {
   			if($query){
    				$data['reqs'] =  $query;
   			}
-	  	$this->load->view('list.php', $data);
+	  	$this->load->view('list', $data);
 		}
 
 		
@@ -75,6 +75,16 @@ class Requests extends CI_Controller {
 			// if ($this->uri->segment(3))
 
 			
+		}
+
+		public function show($id) {
+    		$this->load->model('Requests_model');
+    		$news = $this->Requests_model->get_req($id);
+    		$data['fio'] = $news['fio'];
+    		$data['no'] = $news['req_no'];
+    		$data['phone'] = $news['phone'];
+    		// $data['body'] = $news['body'];
+    		$this->load->view('req_view', $data);
 		}
 		
 }	

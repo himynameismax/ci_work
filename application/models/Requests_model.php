@@ -6,18 +6,24 @@ class Requests_model extends CI_Model {
  {
  	 parent::__construct();
  }
- public function getList($id)
+ public function getList()
  {
- 	$id='7SwA9';
- 	if ($this->uri->segment(3))
- 	{
  	$this->db->select("*");
  	$this->db->from('it_requests');
- 	$this->db->where('id', $id);
+ 	// $this->db->where('id', $id);
  	$query = $this->db->get();
  	return $query->result();
- 	}
  }
+
+ public function get_req($id) {
+  			if($id != FALSE) {
+    			$query = $this->db->get_where('it_requests', array('id' => $id));
+    			return $query->row_array();
+  				}
+  			else {
+    			return FALSE;
+  				}
+		}
  // function getReqById(){
 	// 		$this->db->select('*');
  //    		$this->db->from('it_requests');
