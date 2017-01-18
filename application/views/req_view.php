@@ -1,4 +1,4 @@
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/lightbox/css/lightbox.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/lightbox/css/lightbox.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/superhero/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/bootstrap.css">
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
@@ -16,14 +16,15 @@
     		<p><b>Комментарий</b></p><br>
     	</div>
     	<div class="col-xs-3 top-buffer" style="margin-left: 20px">
-    		<p><b><?php  print $no;?></b></p><br>
-    		<p><b><?php  print $fio;?></b></p><br>
-    		<p><b><?php  print $phone;?></b></p><br>
-    		<p><b></b></p><br>
+    		<p><b><?php print $no;?></b></p><br>
+    		<p><b><?php print $fio;?></b></p><br>
+    		<p><b><?php print $phone;?></b></p><br>
+    		<?php for ($i = 0; $i < count($file); ++$i) { ?>
+    		<p><b><a href="/uploads/<?php echo $file[$i]->file_name; ?>" data-lightbox="roadtrip"><?php echo ($i+1); ?></a></td></p>
+    		<?php } ?>
     		<p><b></b></p><br>
     	</div>
-
     </div>
 
 
-    
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/lightbox/js/lightbox.js"></script>

@@ -72,19 +72,25 @@ class Requests extends CI_Controller {
 		
 
 		function viewReq(){
-			// if ($this->uri->segment(3))
+			$this->load->model('Requests_model');
+			$files = $this->Requests_model->getimg();
+			// $data['file'] = $files['file_name'];
+			$data['filenames'] = $files;
+			$this->load->view('editor', $data);
 
-			
 		}
 
 		public function show($id) {
-    		$this->load->model('Requests_model');
+			$this->load->model('Requests_model');
     		$news = $this->Requests_model->get_req($id);
+			$files = $this->Requests_model->getimg($id);
+        	$data['file'] = $files;
     		$data['fio'] = $news['fio'];
     		$data['no'] = $news['req_no'];
     		$data['phone'] = $news['phone'];
     		// $data['body'] = $news['body'];
     		$this->load->view('req_view', $data);
+    		
 		}
 		
 }	

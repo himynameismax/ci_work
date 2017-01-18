@@ -11,7 +11,7 @@
 <li><?php echo $item;?>: <?php echo $value;?></li>
 <?php endforeach; ?>
 </Tul>
-
+<?php echo $files ?>
 <p><?php echo anchor('/requests/do_upload', 'Upload more files!'); ?></p>
 
 </body>

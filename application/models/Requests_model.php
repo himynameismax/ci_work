@@ -24,6 +24,38 @@ class Requests_model extends CI_Model {
     			return FALSE;
   				}
 		}
+		public function get_img($id) {
+  			if($id != FALSE) {
+    			$query = $this->db->get_where('it_requests_files', array('req_id' => $id));
+    			return $query->row_array();
+  				}
+  			else {
+    			return FALSE;
+  				}
+  			}
+
+  			// public function getimg() {
+  				
+  			// 	$this->db->select('file_name');
+  			// 	$this->db->from('it_requests_files');
+  			// 	$this->db->where('req_id','MgTFI');
+  			// 	$query = $this->db->get();
+    	// 		$result= $query->result();
+    	// 		echo $result;
+  			// 	}
+
+  			public function getimg($id){
+            	//$sql = 'select * from it_requests_files';
+          		// $query = $this->db->query($sql);
+          		$this->db->select('file_name');
+  				$this->db->from('it_requests_files');
+  				$this->db->where('req_id', $id);
+  				$query = $this->db->get();
+         		$result = $query->result();
+          		return $result;
+            }
+  			
+  			
  // function getReqById(){
 	// 		$this->db->select('*');
  //    		$this->db->from('it_requests');
