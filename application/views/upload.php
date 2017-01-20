@@ -17,7 +17,7 @@
 <!-- <?php echo $error;?> -->
 <form class="form-horizontal" action="/requests/do_upload" method="POST" enctype="multipart/form-data" >
 
-<div class="col-md-4 offset-md-4" style="background-color: #EEEEEE">
+<div class="col-md-4 offset-md-8" style="background-color: #EEEEEE">
 
 <div class="form-group top-buffer">
   <label class="col-md-4 control-label" for="tmc">Наименование ТМЦ</label>  
@@ -26,7 +26,7 @@
   </div>
 </div>
 
-<div class="form-group top-buffer">
+<div class="form-group">
   <label class="col-md-4 control-label" for="fio">ФИО</label>  
   <div class="col-md-6">
   <input id="fio" name="fio" type="text" placeholder="" class="form-control input-md">

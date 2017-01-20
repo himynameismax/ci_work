@@ -2,6 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style type="text/css">
+  li.active > a:hover{
+    background-color: #009933 !important;
+  }
+</style>
   <title>Учет картриджей</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -109,6 +114,15 @@
 
 </body>
 </html>
+
+<script type="text/javascript">
+  $.ajax({
+    url   : "/email/warn",
+    async : true //change this to false if you hate your users and want them to wait 
+}).done(function() {
+    // alert("EMAIL IS READY! USER DIDN'T WAIT")
+});
+</script>
 <!-- <li class="active"><a href="#" data-toggle="modal" data-target="#myModal">Contact</a></li>
 <div id="myModal" class="modal fade" aria-labelledby="myModalLabel" aria-hidden="true" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg">

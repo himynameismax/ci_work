@@ -12,6 +12,10 @@ class Email extends CI_Controller
     }
     public function index()
     {
+        
+    }
+
+    public function warn(){
         $data['def'] = $this->give_cart->valComp();
         $this->load->view('deficite', $data);
         $this->load->model('');
@@ -31,7 +35,7 @@ class Email extends CI_Controller
             'name' => 'Support'
         ];
        
-        $to = array('valera.oreshkin@nkmz.ru');
+        $to = array('maksim.sokolov@nkmz.ru');
         $subject = 'Малое количество картриджей на складе';
       //  $message = 'Type your gmail message here'; // use this line to send text email.
         // load view file called "welcome_message" in to a $message variable as a html string.
@@ -50,8 +54,7 @@ class Email extends CI_Controller
             // Raise error message
             show_error($this->email->print_debugger());
         } else {
-            // Show success notification or other things here
-            echo 'Success to send email';
+            
         }
     }
 }

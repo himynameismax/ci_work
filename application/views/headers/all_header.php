@@ -30,11 +30,8 @@
       <li><a href="http://192.168.100.3/support" target="blank"><span class="glyphicon glyphicon-wrench"></span> Техническая поддержка</a></li>
       <li><a href="/phones/all"><span class="glyphicon glyphicon-phone-alt"></span> Телефонный справочник</a></li>
       <li><a href="https://192.168.11.16:8443" target="blank"><span class="glyphicon glyphicon-envelope"></span> Почта</a></li>
-      <?php if($logged_in): ?>
         <li><a href="/Auth/logout"><span class="glyphicon glyphicon-log-out"></span> Выйти </a></li>      
-      <?php else: ?>
         <li><a href="/Home/login"><span class="glyphicon glyphicon-log-in"></span> Войти</a></li>
-      <?php endif;?>
       
         
       

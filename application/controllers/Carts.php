@@ -17,7 +17,16 @@
   			$data['carts'] = $this->give_cart->getCart();
   			$data['cts'] = $this->give_cart->getCarts();
   			$data['op_list'] = $this->give_cart->getOpList();
-        $data['def'] = $this->give_cart->valComp();
+        $datadef['def'] = $this->give_cart->valComp();
+        $this->give_cart->defWarn();
+        if (!empty($datadef)) {
+          echo "TRUE";
+        }
+        else {
+          echo "FALSE";
+        }
+        
+
         $this->load->view("headers/all_header");
   			$this->load->view('cart_give', $data);
         // $this->load->view("headers/all_header");
@@ -77,7 +86,8 @@
             
         	
   		}
-
-
-  }
+      function defCheck(){
+        // $data['def'] = $this->give_cart->valComp();
+      }
+    }
 ?>
