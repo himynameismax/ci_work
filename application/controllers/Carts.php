@@ -18,7 +18,7 @@
   			$data['cts'] = $this->give_cart->getCarts();
   			$data['op_list'] = $this->give_cart->getOpList();
         $datadef['def'] = $this->give_cart->valComp();
-        $this->give_cart->defWarn();
+        // $this->give_cart->defWarn();
         if (!empty($datadef)) {
           echo "TRUE";
         }

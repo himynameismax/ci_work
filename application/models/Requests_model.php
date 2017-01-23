@@ -54,7 +54,10 @@ class Requests_model extends CI_Model {
          		$result = $query->result();
           		return $result;
             }
-  			
+
+  			public function getStatuses() {
+  				
+  			}
   			
  // function getReqById(){
 	// 		$this->db->select('*');
