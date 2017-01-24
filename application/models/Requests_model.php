@@ -15,10 +15,18 @@ class Requests_model extends CI_Model {
  	return $query->result();
  }
 
- public function get_req($id) {
+ 	public function get_req($id) {
   			if($id != FALSE) {
-    			$query = $this->db->get_where('it_requests', array('id' => $id));
-    			return $query->row_array();
+    			// $query = $this->db->get_where('it_requests', array('id' => $id));
+    			// return $query->row_array();
+
+    			$this->db->select('*');
+  				$this->db->from('it_requests');
+  				$this->db->where('id', $id);
+  				$this->db->join('it_req_status', 'it_requests.status = it_req_status.status_id', 'left');
+  				$query = $this->db->get();
+         		$result = $query->row_array();
+          		return $result;
   				}
   			else {
     			return FALSE;
@@ -26,6 +34,8 @@ class Requests_model extends CI_Model {
 		}
 		public function get_img($id) {
   			if($id != FALSE) {
+
+
     			$query = $this->db->get_where('it_requests_files', array('req_id' => $id));
     			return $query->row_array();
   				}
@@ -49,14 +59,18 @@ class Requests_model extends CI_Model {
           		// $query = $this->db->query($sql);
           		$this->db->select('file_name');
   				$this->db->from('it_requests_files');
-  				$this->db->where('req_id', $id);
+  				$this->db->where('req_id', $id);																																																						
   				$query = $this->db->get();
          		$result = $query->result();
           		return $result;
             }
 
   			public function getStatuses() {
-  				
+  				$this->db->select('status');
+  				$this->db->from('it_req_status');
+  				$query = $this->db->get();
+         		$result = $query->result();
+          		return $result;
   			}
   			
  // function getReqById(){

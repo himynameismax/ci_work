@@ -15,7 +15,7 @@ foreach($css_files as $file): ?>
 <?php endforeach; ?>
 </head>
 <body>
-	<?php $this->load->view('it_header');?>
+	<!-- <?php $this->load->view('it_header');?> -->
 	<div style='height:20px; margin-top: 50px'></div>  
     <div>
 		<?php echo $output; ?>

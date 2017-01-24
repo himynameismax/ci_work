@@ -84,7 +84,9 @@ class Requests extends CI_Controller {
 			$this->load->model('Requests_model');
     		$news = $this->Requests_model->get_req($id);
 			$files = $this->Requests_model->getimg($id);
+
         	$data['file'] = $files;
+        	$data['status'] = $news['status'];
     		$data['fio'] = $news['fio'];
     		$data['no'] = $news['req_no'];
     		$data['phone'] = $news['phone'];

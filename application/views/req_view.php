@@ -14,11 +14,12 @@
               	position: relative;
                 outline: 1px solid;
               }
-              #info img {
+              #info #status {
+              	background-color: #ff0000;
               	position: absolute;
-    			top: 0px;
-    			right: 0px;
-    			width:100px; /* you can use % */
+    			top: 20px;
+    			right: 20px;
+    			/*width:100px;*/
     			height: auto;
               }
               #files img {
@@ -31,7 +32,7 @@
 	</style>
 
     <div id="info" class="col-lg-4 col-lg-offset-4" style="background-color: #EEEEEE"">
-    <img src="<?php echo base_url(); ?>assets/img/done.png">
+    <div id="status"><?php print $status ?></div>
     	<div class="col-xs-3 top-buffer" style="margin-left: 20px">
     		<p><b>Заявка №</b></p><br>
     		<p><b>Автор</b></p><br>
