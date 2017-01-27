@@ -66,12 +66,15 @@ class Requests_model extends CI_Model {
             }
 
   			public function getStatuses() {
-  				$this->db->select('status');
-  				$this->db->from('it_req_status');
-  				$query = $this->db->get();
-         		$result = $query->result();
-          		return $result;
-  			}
+				$query = $this->db->query('SELECT * FROM it_req_status');
+    			$dropdowns = $query->result();
+    			foreach($dropdowns as $dropdown) {
+		        $dropDownList[$dropdown->status,] = $dropdown->status;
+    				}
+    					$finalDropDown = array_merge(array('' => 'Please Select'), $dropDownList);
+
+    				return $finalDropDown;
+  					}
   			
  // function getReqById(){
 	// 		$this->db->select('*');

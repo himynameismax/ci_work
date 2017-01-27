@@ -79,19 +79,45 @@ class Requests extends CI_Controller {
 			$this->load->view('editor', $data);
 
 		}
+		function getStatus(){
+			$this->load->model('Requests_model');
+
+			$stat = $this->Requests_model->getStatuses();
+			$data['st'] = $stat['status'];
+			$this->load->view('ldap', $data);
+		}
 
 		public function show($id) {
 			$this->load->model('Requests_model');
+
+			
+			$data['st'] = $this->Requests_model->getStatuses();
+			$statuses = $this->Requests_model->getStatuses();
     		$news = $this->Requests_model->get_req($id);
 			$files = $this->Requests_model->getimg($id);
-
+			$data['id'] = $this->uri->segment(3);
         	$data['file'] = $files;
         	$data['status'] = $news['status'];
+        	$data['st_id'] = $news['status_id'];
+        	
     		$data['fio'] = $news['fio'];
     		$data['no'] = $news['req_no'];
     		$data['phone'] = $news['phone'];
-    		// $data['body'] = $news['body'];
+    		
     		$this->load->view('req_view', $data);
+    		$data_in=array(
+ 				'status' => $this->input->post('stat'),
+ 				// 'status_id' => $
+           		);
+    		if($this->input->post('submit') == "accept") { 
+            
+            // $this->db->insert('it_requests', $data_in);
+            $this->db->set('status',$data_in['status'], TRUE);
+            $this->db->where('id', $data['id']);
+            $this->db->update('it_requests');
+            }
+
+
     		
 		}
 		

@@ -30,7 +30,12 @@
     			height: auto;
               }
 	</style>
-
+	<form id="box-out" action="<?php echo site_url("requests/show/$id"); ?>" method="post" enctype="multipart/form-data">
+	<?php echo form_dropdown('stat', $st, 'name="new_stat"'); ?>
+	<!-- <?php echo "$new_status"; ?> -->
+	
+	<input type="submit" name="submit" class="btn btn-primary" value="accept" id="accept"/>
+	</form>
     <div id="info" class="col-lg-4 col-lg-offset-4" style="background-color: #EEEEEE"">
     <div id="status"><?php print $status ?></div>
     	<div class="col-xs-3 top-buffer" style="margin-left: 20px">
@@ -45,6 +50,8 @@
     		<p><b><?php print $phone;?></b></p><br>
     	</div>
     </div><br>
+    
+
     
     <div id="files" class="col-lg-4 col-lg-offset-4" style="background-color: #EEEEEE"">
     <div class="col-xs-3 top-buffer" style="margin-left: 20px">
