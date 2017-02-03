@@ -69,20 +69,26 @@ class Requests_model extends CI_Model {
 				$query = $this->db->query('SELECT * FROM it_req_status');
     			$dropdowns = $query->result();
     			foreach($dropdowns as $dropdown) {
-		        $dropDownList[$dropdown->status,] = $dropdown->status;
+		        $dropDownList[$dropdown->status] = $dropdown->status;
     				}
-    					$finalDropDown = array_merge(array('' => 'Please Select'), $dropDownList);
+    					$finalDropDown = array_merge(array('' => 'Выберите статус'), $dropDownList);
 
     				return $finalDropDown;
   					}
-  			
- // function getReqById(){
-	// 		$this->db->select('*');
- //    		$this->db->from('it_requests');
- //    		// $this->db->join('it_requests_files', 'id=req_id', 'inner');
- //    		$query = $this->db->get();    
- //    		return $query->result();
-			
-	// 	}
 
+  			public function getSt($st_id)
+  			{
+                $this->db->select('*');
+                // $this->db->distinct();
+                $this->db->from('it_req_status');
+                $this->db->where('status', $st_id);
+                
+                
+                $query = $this->db->get();
+                if ($query->num_rows() > 0) {
+    				foreach ($query->result() as $row) {
+        			return $row->status_id;
+        			}
+    			}   
+            }
 }

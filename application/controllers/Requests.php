@@ -12,23 +12,21 @@ class Requests extends CI_Controller {
    $this->load->library('table');
  }
  
- function index(){
+ function index()
+ {
  	$this->load->view('upload', array('error' => ' ' ));
-
  }
  function do_upload()
-	{
-		$new_name = time();
-		$config['upload_path'] = './uploads/';
-		$config['allowed_types'] = 'gif|jpg|jpeg|png';
-		$config['max_size']	= '2048';
-		// $config['max_width']  = '1024';
-		// $config['max_height']  = '768';
-		$config['file_name'] = $new_name;
+ {
+	$new_name = time();
+	$config['upload_path'] = './uploads/';
+	$config['allowed_types'] = 'gif|jpg|jpeg|png';
+	$config['max_size']	= '2048';
+	// $config['max_width']  = '1024';
+	// $config['max_height']  = '768';
+	$config['file_name'] = $new_name;
 
-		
-		
-		$this->load->library('upload', $config);
+	$this->load->library('upload', $config);
 	
 		if ( ! $this->upload->do_upload())
 		{
@@ -62,10 +60,7 @@ class Requests extends CI_Controller {
 	function lst(){
 		$this->load->model('Requests_model');
 		$query = $this->Requests_model->getList();
-  		$data['reqs'] = null;
-  			if($query){
-   				$data['reqs'] =  $query;
-  			}
+		$data['reqs'] =  $query;
 	  	$this->load->view('list', $data);
 		}
 
@@ -90,8 +85,10 @@ class Requests extends CI_Controller {
 		public function show($id) {
 			$this->load->model('Requests_model');
 
-			
 			$data['st'] = $this->Requests_model->getStatuses();
+			$st_id = $this->input->post('stat');
+			
+			$data_st = $this->Requests_model->getSt($st_id);
 			$statuses = $this->Requests_model->getStatuses();
     		$news = $this->Requests_model->get_req($id);
 			$files = $this->Requests_model->getimg($id);
@@ -105,16 +102,17 @@ class Requests extends CI_Controller {
     		$data['phone'] = $news['phone'];
     		
     		$this->load->view('req_view', $data);
-    		$data_in=array(
- 				'status' => $this->input->post('stat'),
- 				// 'status_id' => $
-           		);
+    		
     		if($this->input->post('submit') == "accept") { 
             
             // $this->db->insert('it_requests', $data_in);
-            $this->db->set('status',$data_in['status'], TRUE);
+            $this->db->set('status',$data_st, TRUE);
             $this->db->where('id', $data['id']);
             $this->db->update('it_requests');
+            redirect($this->uri->uri_string());
+            }
+            elseif ($this->input->post('submit') == "go"){
+
             }
 
 
